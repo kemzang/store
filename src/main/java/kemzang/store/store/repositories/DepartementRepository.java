@@ -1,6 +1,6 @@
 package kemzang.store.store.repositories;
 
-import model.Departement;
+import kemzang.store.store.model.Departement;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

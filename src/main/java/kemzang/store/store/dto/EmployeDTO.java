@@ -3,7 +3,7 @@ package kemzang.store.store.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import model.TypePoste;
+import kemzang.store.store.model.TypePoste;
 import java.time.LocalDate;
 import java.util.UUID;
 

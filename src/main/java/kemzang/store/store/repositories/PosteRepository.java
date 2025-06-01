@@ -2,9 +2,9 @@ package kemzang.store.store.repositories;
 
 import org.springframework.stereotype.Repository;
 
-import model.Employe;
-import model.Poste;
-import model.TypePoste;
+import kemzang.store.store.model.Employe;
+import kemzang.store.store.model.Poste;
+import kemzang.store.store.model.TypePoste;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.UUID;

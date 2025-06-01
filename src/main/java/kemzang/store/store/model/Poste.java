@@ -1,4 +1,4 @@
-package model;
+package kemzang.store.store.model;
 
 import jakarta.persistence.*;
   import jakarta.validation.constraints.*;
@@ -24,7 +24,7 @@ public class Poste {
   @Enumerated(EnumType.STRING)
   @Column(nullable=false)
   @NotBlank(message="Le libellé du poste est obligatoire")
-  private model.TypePoste libellePoste;
+  private TypePoste libellePoste;
  
   @Column(nullable=false)
   @Min(value=42000,message = "Le salaire minimum doit être au dessus du SMIG")
@@ -35,7 +35,7 @@ public class Poste {
   private Integer salaireMax;
  
   @OneToMany(mappedBy="poste",cascade=CascadeType.ALL)
-  private List<model.Employe> employes;
+  private List<Employe> employes;
  
   @AssertTrue(message="Le salairemaximumdoitêtresupérieurausalireminimum")
   public boolean isSalaireValide(){

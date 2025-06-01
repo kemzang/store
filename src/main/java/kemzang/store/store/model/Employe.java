@@ -1,4 +1,4 @@
-package model;
+package kemzang.store.store.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -41,9 +41,9 @@ public class Employe{
 
      @ManyToOne
      @JoinColumn(name="poste")
-     private model.Poste poste;
+     private Poste poste;
 
      @ManyToOne
      @JoinColumn(name="departement")
-     private model.Departement departement;
+     private Departement departement;
      }

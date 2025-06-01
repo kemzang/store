@@ -1,4 +1,4 @@
-package model;
+package kemzang.store.store.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -25,5 +25,5 @@ public class Departement {
     @NotBlank(message = "Le libellé du département est obligatoire")
     private String libelleDepartement;
     @OneToMany(mappedBy = "departement", cascade = CascadeType.ALL)
-    private List<model.Employe> employes;
+    private List<Employe> employes;
 }
