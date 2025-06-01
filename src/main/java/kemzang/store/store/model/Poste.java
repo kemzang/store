@@ -23,21 +23,21 @@ public class Poste {
  
   @Enumerated(EnumType.STRING)
   @Column(nullable=false)
-  @NotBlank(message="Lelibelléduposteestobligatoire")
-  private TypePoste libellePoste;
+  @NotBlank(message="Le libellé du poste est obligatoire")
+  private model.TypePoste libellePoste;
  
   @Column(nullable=false)
-  @Min(value=42000,message = "LesalaireminimumdoitêtreaudessusduSMIG")
+  @Min(value=42000,message = "Le salaire minimum doit être au dessus du SMIG")
   private Integer salaireMin;
  
   @Column(nullable=false)
-  @Max(value=1000000,message ="Lesalairemaxestde1million")
+  @Max(value=1000000,message ="Le salaire max est de 1million")
   private Integer salaireMax;
  
   @OneToMany(mappedBy="poste",cascade=CascadeType.ALL)
-  private List<Employe> employes;
+  private List<model.Employe> employes;
  
-  @AssertTrue(message="Lesalairemaximumdoitêtresupérieurausalireminimum")
+  @AssertTrue(message="Le salairemaximumdoitêtresupérieurausalireminimum")
   public boolean isSalaireValide(){
   //pouréviterNullPointerException
   if (salaireMin==null|| salaireMax==null) return true;
