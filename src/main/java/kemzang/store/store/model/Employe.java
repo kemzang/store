@@ -46,4 +46,17 @@ public class Employe{
      @ManyToOne
      @JoinColumn(name="departement")
      private Departement departement;
+
+     @Override
+     public String toString() {
+          return "Employe{" +
+                  "id=" + id +
+                  ", nom='" + nom + '\'' +
+                  ", email='" + email + '\'' +
+                  ", dateEmbauche=" + dateEmbauche +
+                  ", salaire=" + salaire +
+                  ", poste=" + (poste != null ? poste.getLibellePoste() : "null") +  // Évitez d'appeler toString() sur l'objet complet
+                  ", departement=" + (departement != null ? departement.getLibelleDepartement() : "null") +
+                  '}';
+     }
      }

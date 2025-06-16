@@ -37,8 +37,14 @@ public class EmployeService {
          .collect(Collectors.toList());
          }
 
+    public Employe getEmployeById(UUID id){
+         Employe employe=employeRepository.findById(id)
+         .orElseThrow(()->new RuntimeException("Employé non retrouvé!"));
+        return employe;
+        }
+
           //RecupérerunemployéquiexistedanslaBDparsonID
-          public EmployeDTO getEmployeById(UUID id){
+          public EmployeDTO getEmployeDtoById(UUID id){
          Employe employe=employeRepository.findById(id)
          .orElseThrow(()->new RuntimeException("Employé non trouvé!"));
          return mapToDTO(employe);
@@ -73,7 +79,7 @@ public class EmployeService {
 
                      return employeRepository.save(existingEmploye);
                      }
-                 ).orElseThrow(()->new RuntimeException("Employénontrouvé!"));
+                 ).orElseThrow(()->new RuntimeException("Employé non trouvé!"));
          }
 
          //SupprimerdelaBDunemployeparsonID

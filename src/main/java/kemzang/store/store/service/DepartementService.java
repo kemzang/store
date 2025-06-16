@@ -18,11 +18,16 @@ public class DepartementService {
 
           //AjouterunnouveaudépartementenBD
           public Departement addDepartement(Departement departement){
-         return departementRepository.save(departement);
+
+              if(departementRepository.existsDistinctByLibelleDepartement(departement.getLibelleDepartement())){
+                  throw new IllegalArgumentException("ce departement existe deja");
+              }
+
+              return departementRepository.save(departement);
          }
 
           //Recupérerlalistedetous lespostesquiexistentdanslaBD
-          public List<Departement>allDepartements(){
+          public List<Departement> allDepartements(){
          return departementRepository.findAll();
          }
 
@@ -45,8 +50,8 @@ public class DepartementService {
           public void deleteDepartement(UUID id){
          // Siledépartementasupprimern'existepasilfautafficherunmessage
          if(!departementRepository.existsById(id)){
-             throw new EntityNotFoundException("Ledépartementavecid"+id
-             + "n'existepas!");
+             throw new EntityNotFoundException("Le département avec id"+id
+             + "n'existe pas!");
              }
          departementRepository.deleteById(id);
          }

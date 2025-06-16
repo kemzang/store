@@ -42,14 +42,15 @@ public class PosteService {
                      existingPoste.setSalaireMin(updatedPoste.getSalaireMin());
                      return posteRepository.save(existingPoste);
                      }
-                 ).orElseThrow(()->new RuntimeException("Postenontrouvé!"));
-         }
+                 ).orElseThrow(()->new RuntimeException("Postenontrouvé!")
+         );
+    }
 
          //SupprimerdelaBDunposteparsonID
          public void deletePoste(UUID id){
          // Sileposteasupprimern'existepasilfautafficherunmessage
          if (!posteRepository.existsById(id)){
-             throw new EntityNotFoundException("Leposteavecid"+id+"n'existepas!");
+             throw new EntityNotFoundException("Le poste avec id"+id+"n'existe pas!");
              }
          posteRepository.deleteById(id);
          }

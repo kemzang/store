@@ -1,0 +1,116 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<body>-->
+<!--<nav class="navbar navbar-expand-lg bg-body-tertiary mb-5 border-bottom" th:fragment="header">-->
+<!--    <div class="container">-->
+<!--        <a class="navbar-brand fw-bolder" th:href="@{/}">STORE</a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"-->
+<!--                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"-->
+<!--                aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="navbarNavDropdown">-->
+<!--            <ul class="navbar-nav">-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle text-dark active" href="#"-->
+<!--                       role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                        Employés-->
+<!--                    </a>-->
+<!--                    <ul class="dropdown-menu">-->
+<!--                        <li><a class="dropdown-item" th:href="@{/employe/new}">Créer</a></li>-->
+<!--                        <li><a class="dropdown-item" th:href="@{/employe}">Lister</a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle text-dark active" href="#"-->
+<!--                       role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                        Départements-->
+<!--                    </a>-->
+<!--                    <ul class="dropdown-menu">-->
+<!--                        <li><a class="dropdown-item" th:href="@{/departement/new}">Créer</a></li>-->
+<!--                        <li><a class="dropdown-item" th:href="@{/departement}">Lister</a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle text-dark active" href="#"-->
+<!--                       role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                        Postes-->
+<!--                    </a>-->
+<!--                    <ul class="dropdown-menu">-->
+<!--                        <li>-->
+<!--                            <a class="dropdown-item" th:href="@{/poste/new}">Créer</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a class="dropdown-item" th:href="@{/poste}">Lister</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .nav-link i {
+            color: #007bff; /* Couleur bleue */
+            margin-right: 8px; /* Espace à droite de l'icône */
+        }
+        .dropdown-item i {
+            color: #28a745; /* Couleur verte */
+            margin-right: 5px; /* Espace à droite de l'icône */
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary mb-5 border-bottom" th:fragment="header">
+    <div class="container">
+        <a class="navbar-brand fw-bolder" th:href="@{/}">STORE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark active" href="#"
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-id-badge fa-lg"></i> Employés
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/employe/new}"><i class="fas fa-user-edit"></i> Créer</a></li>
+                        <li><a class="dropdown-item" th:href="@{/employe}"><i class="fas fa-users-cog"></i> Lister</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark active" href="#"
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-sitemap fa-lg"></i> Départements
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/departement/new}"><i class="fas fa-plus-square"></i> Créer</a></li>
+                        <li><a class="dropdown-item" th:href="@{/departement}"><i class="fas fa-th-list"></i> Lister</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark active" href="#"
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-clipboard-list fa-lg"></i> Postes
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/poste/new}"><i class="fas fa-plus-circle"></i> Créer</a></li>
+                        <li><a class="dropdown-item" th:href="@{/poste}"><i class="fas fa-clipboard-check"></i> Lister</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

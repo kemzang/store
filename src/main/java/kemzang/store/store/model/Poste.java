@@ -23,7 +23,6 @@ public class Poste {
  
   @Enumerated(EnumType.STRING)
   @Column(nullable=false)
-  @NotBlank(message="Le libellé du poste est obligatoire")
   private TypePoste libellePoste;
  
   @Column(nullable=false)
@@ -37,10 +36,18 @@ public class Poste {
   @OneToMany(mappedBy="poste",cascade=CascadeType.ALL)
   private List<Employe> employes;
  
-  @AssertTrue(message="Le salairemaximumdoitêtresupérieurausalireminimum")
+  @AssertTrue(message="Le salaire maximum doit être supérieur au salire minimum")
   public boolean isSalaireValide(){
   //pouréviterNullPointerException
   if (salaireMin==null|| salaireMax==null) return true;
   return salaireMax>salaireMin;
   }
+
+    @Override
+    public String toString() {
+      return "Poste{" +
+              "id=" + id +
+              ", libellePoste='" + libellePoste + '\'' +
+              '}';
+    }
 }

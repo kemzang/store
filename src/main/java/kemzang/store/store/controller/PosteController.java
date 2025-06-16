@@ -41,6 +41,8 @@ public class PosteController {
   return "poste/addposte";
  }
 
+ // BindingResult : contient les messages d'erreur lie aux resultat d'evaluation des contraintes de validation
+ // RedirectAttributes : permet les messages flash
  @PostMapping("/save")
  public String savePoste(@Valid @ModelAttribute("poste") Poste poste,
                          BindingResult bindingResult,
